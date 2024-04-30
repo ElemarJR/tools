@@ -1,0 +1,41 @@
+flowchart TB
+    start["# Escrever título relevante"]
+    s1["Explicitar o propósito do Notebook"]
+    s2["Criar as seções CODE"]
+    start --> s1 --> s2 --> c
+    subgraph c[Collect]
+        direction TB
+        c_setup["Instalar e Importar pacotes necessários (pandas)"]
+        c1["Determine as fontes de dados necessárias"]
+        c2["Ler arquivos de dados (se houverem)"]
+        c3["Escrever código de consumo a APIs"]
+        c4["Formatar DataFrames"]
+        c_setup --> c1 --> c2 --> c3 --> c4
+    end
+    subgraph o["Organize (Categorias e Relacionamentos)"]
+        direction TB
+        o_setup["Instalar e Importar pacotes necessários (numpy)"]
+        o1["Consolidar um dataframe de fatos"]
+        o2["Produzir os sumários mais relevantes"]
+        o_setup --> o1 -->  o2
+    end
+    subgraph d["Distill"]
+        direction TB
+        d_setup["Instalar e Importar pacotes necessários (matplotlib)"]
+        d1["Plotar visualizações mais relevantes"]
+        d2["Gerar indicadores relevantes"]
+        d3["Implementar Widgets"]
+        d_setup --> d1 --> d2 --> d3
+    end
+    subgraph e["Express"]
+        direction TB
+        e1["Redigir conclusões"]
+        e2["Converter Notebook em Dashboard"]
+        e1 --> e2
+    end
+    c --> o --> d --> e
+
+
+
+
+

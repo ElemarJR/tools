@@ -53,6 +53,10 @@ class Commits:
         result['perc'] = result['changes'] / changes * 100
         return result.sort_values(by='changes', ascending=False)
 
+    def filter_by(self, by, value):
+        filtered = self.commits[self.commits[by] == value]
+        return Commits(filtered)
+
 class RavenDB_git:
     def __init__(self, repo_path):
         self.repo_path = repo_path
